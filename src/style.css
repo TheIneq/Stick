@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #111, #222, #242424);
+  color: #eee;
+  line-height: 1.6;
+}
+
+p {
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* TOOLTIP */
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+    top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  box-shadow: 0 0 10px #000a;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.7s;
+  z-index: 1000;
+  font-size: 13px;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* BUTTON */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: #0f0f0f;
+  border: 1px solid #ffffff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #ffffff;
+}
+
+/* TILE */
+
+.tile {
+  background-color: #0f0f0f;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000a;
+  color: #eee;
+  transition: all 0.5s ease;
+}
+
+.tile:hover {
+  background-color: #1d1d1d;
+  transform: translateY(-4px);
+}
+
+.tile h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.tile p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* NAVBAR */
+
+.logo {
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #555;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  transition: all 1s ease;
+  cursor: default;
+  user-select: none; 
+}
+
+.logo:hover {
+  background-color: #222;
+  box-shadow: 0 0 50px #ffffff;
+  transform: translateY(-4px);
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: auto auto;
+}
+
+.navBarLinks {
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #555;
+  padding: 10px 40px;
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  cursor: default;
+  user-select: none; 
+}
+
+.navBarLinks a i {
+  color: #eee;
+  text-decoration: none;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.navBarLinks a:hover i {
+  transform: scale(1.3);
+  color: #ddd;
+}
+
+.navBarLinks a.active i {
+  color: #fff;
+  transform: scale(1.3);
+  font-weight: bold;
+}
+
+/* HOME */
+
+.iHeader {
+  background-image: url('/img/discord.png');
+  background-size: 215ex;
+  background-position: center;
+  position: relative;
+  padding: 310px 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px #000a;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.iHeader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.iHeaderContent {
+  cursor: default;
+  user-select: none; 
+  position: relative;
+  z-index: 2;
+}
+
+.home-tiles {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  cursor: default;
+  user-select: none; 
+}
+
+/* COMMANDS */
+
+.commands-tiles {
+  margin-top: 2rem;
+  flex-direction: row;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  cursor: default;
+  user-select: none; 
+}
+
+.commands li {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #555;
+  color: #ddd;
+}
+
+/* CHANGELOG */
+
+.changeLog-tiles {
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  cursor: default;
+  user-select: none; 
+}
+
+.changeLog li {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #555;
+  color: #ddd;
+}
+
+/* TERMSOFSERVICE */
+
+.termsOfServiceTiles {
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+/* FOOTER */
+footer {
+  color: #ddd;
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000a;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem;
+  cursor: default;
+  user-select: none; 
+}
+
+.footer a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ffffff7e;
+}
+
+.footer a.active {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid #fff;
+}
+
+footer a i {
+  transition: transform 0.3s ease;
+}
+
+footer a:hover i {
+  transform: translateY(-4px);
+}
