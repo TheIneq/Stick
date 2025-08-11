@@ -2,7 +2,7 @@ document.addEventListener('contextmenu', (e) => {
   e.preventDefault();
 });
 
-fetch('./src/layout.html')
+fetch('/Stick/src/layout.html')
   .then(res => res.text())
   .then(data => {
     const tempDiv = document.createElement('div');
