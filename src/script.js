@@ -39,3 +39,26 @@ fetch('/Stick/src/layout.html')
       }
     });
   }).catch(err => console.error('Failed to load layout:', err));
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.body.classList.remove('fade-in');
+  }, 50);
+});
+
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) {
+      return;
+    }
+
+    e.preventDefault();
+
+    document.body.classList.add('fade-out');
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500);
+  });
+});
